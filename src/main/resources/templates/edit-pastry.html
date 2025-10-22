@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edytuj ciastko</title>
+</head>
+<body>
+
+<h2>Edit pastry</h2>
+
+<form th:action="@{/bakery/update}" th:object="${pastryToEdit}" method="post">
+    <input type="hidden" name="_method" value="put" />
+    <input type="hidden" th:field="*{id}">
+    <p>Name: <input type="text" th:field="*{name}"></p>
+    <p>Price: <input type="text" th:field="*{price}"></p>
+    <p>Availability: <input type="checkbox" th:field="*{available}"></p>
+    <p><input type="submit" value="Zapisz zmiany"></p>
+</form>
+
+</body>
+</html>
